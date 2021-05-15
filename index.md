@@ -9,7 +9,7 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br>  
 <a href = "https://gadgetgirlkim.github.io/SixFeetHTMLFolder/index.html" target = "_blank"> Six Feet Game</a>
 <br>  
-<a href = "https://gadgetgirlkim.github.io/SlimeageddonHTMLFolder/index.html" target = "_blank"> Slimeageddon Game</a>
+<a href = "https://gadgetgirlkim.github.io/Slimeageddon2HTMLFolder/index.html" target = "_blank"> Slimeageddon Game</a>
 
 
 </p>
