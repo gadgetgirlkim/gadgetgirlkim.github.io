@@ -15,7 +15,7 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br>  
 <a href = "https://gadgetgirlkim.github.io/Nexus_Gen/index.html" target = "_blank"> Nexus Gen</a>
 <br>  
-<a href = "https://gadgetgirlkim.github.io/Biosiz/index.html" target = "_blank"> Biosiz</a>
+<a href = "https://gadgetgirlkim.github.io/biosiz/index.html" target = "_blank"> Biosiz</a>
   
 </p>
 
