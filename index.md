@@ -13,7 +13,7 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br>  
 <a href = "https://gadgetgirlkim.github.io/Slimeageddon2HTMLFolder/index.html" target = "_blank"> Slimeageddon Game</a>
 <br>  
-<a href = "https://gadgetgirlkim.github.io/Nexus_Gen/index.html" target = "_blank"> Nexus Gen</a>
+<a href = "https://gadgetgirlkim.github.io/Nexus_Gen/index.html" target = "_blank"> Nexus Gem</a>
 <br>  
 <a href = "https://gadgetgirlkim.github.io/biosiz2/index.html" target = "_blank"> Biosiz</a>
 <br>  
