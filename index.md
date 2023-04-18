@@ -21,10 +21,10 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br>  
 <a href = "https://gadgetgirlkim.github.io/OGPC WebGL/index.html" target = "_blank"> Blights and Broad Swords</a> 
 <br>
-<a href = "https://gadgetgirlkim.github.io/StructureGame/index.html" target = "_blank"> Structure</a> 
-<br>  
 <a href = "https://gadgetgirlkim.github.io/ClickyClick/index.html" target = "_blank"> Clicky Click</a> 
 <br> 
+<a href = "https://gadgetgirlkim.github.io/StructureGame/index.html" target = "_blank"> Structure</a> 
+<br>  
 <a href = "https://gadgetgirlkim.github.io/TowerAscension/index.html" target = "_blank"> Ascension De La Torre</a> 
 <br> 
 <a href = "https://gadgetgirlkim.github.io/ThisTitleIsFalsen/index.html" target = "_blank"> This Title is False</a> 
