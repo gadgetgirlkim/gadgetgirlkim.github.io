@@ -25,7 +25,7 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br>  
 <a href = "https://gadgetgirlkim.github.io/ClickyClick/index.html" target = "_blank"> Clicky Click</a> 
 <br> 
-<a href = "https://gadgetgirlkim.github.io/TowerAscension/index.html" target = "_blank"> Tower Ascension</a> 
+<a href = "https://gadgetgirlkim.github.io/TowerAscension/index.html" target = "_blank"> Ascension De La Torre</a> 
 <br> 
 <a href = "https://gadgetgirlkim.github.io/ThisTitleIsFalsen/index.html" target = "_blank"> This Title is False</a> 
 <br> 
