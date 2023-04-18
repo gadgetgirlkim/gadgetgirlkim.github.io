@@ -17,7 +17,7 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br>  
 <a href = "https://gadgetgirlkim.github.io/biosiz2/index.html" target = "_blank"> Biosiz</a>
 <br>  
-<a href = "https://gadgetgirlkim.github.io/Spirit_Synergy/SpiritSynergy.html" target = "_blank"> Spirit Synergy</a> 
+<a href = "https://gadgetgirlkim.github.io/Spirit Synergy/SpiritSynergy.html" target = "_blank"> Spirit Synergy</a> 
 <br>  
 <a href = "https://gadgetgirlkim.github.io/OGPC WebGL/index.html" target = "_blank"> Blights and Broad Swords</a> 
 <br>
