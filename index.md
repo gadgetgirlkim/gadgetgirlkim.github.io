@@ -23,7 +23,7 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br>
 <a href = "https://gadgetgirlkim.github.io/ClickyClick/index.html" target = "_blank"> Clicky Click</a> 
 <br> 
-<a href = "https://gadgetgirlkim.github.io/Whack-a-Food/index.html" target = "_blank"> Whack-a-Food</a> 
+<a href = "https://gadgetgirlkim.github.io/Whack_a_Food/index.html" target = "_blank"> Whack-a-Food</a> 
 <br> 
 <a href = "https://gadgetgirlkim.github.io/StructureGame/index.html" target = "_blank"> Structure</a> Made by Red Panda Team in 2022-23
 <br>  
