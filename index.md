@@ -17,17 +17,19 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br>  
 <a href = "https://gadgetgirlkim.github.io/biosiz2/index.html" target = "_blank"> Biosiz</a>
 <br>  
-<a href = "https://gadgetgirlkim.github.io/Spirit_Synergy/SpiritSynergy.html" target = "_blank"> Spirit Synergy</a> 
+<a href = "https://gadgetgirlkim.github.io/Spirit Synergy/SpiritSynergy.html" target = "_blank"> Spirit Synergy</a> 
 <br>  
 <a href = "https://gadgetgirlkim.github.io/OGPC WebGL/index.html" target = "_blank"> Blights and Broad Swords</a> 
 <br>
-<a href = "https://gadgetgirlkim.github.io/StructureGame/index.html" target = "_blank"> Structure</a> 
-<br>  
 <a href = "https://gadgetgirlkim.github.io/ClickyClick/index.html" target = "_blank"> Clicky Click</a> 
 <br> 
-<a href = "https://gadgetgirlkim.github.io/TowerAscension/index.html" target = "_blank"> Tower Ascension</a> 
+<a href = "https://gadgetgirlkim.github.io/Whack_a_Food/index.html" target = "_blank"> Whack-a-Food</a> 
 <br> 
-<a href = "https://gadgetgirlkim.github.io/ThisTitleIsFalsen/index.html" target = "_blank"> This Title is False</a> 
+<a href = "https://gadgetgirlkim.github.io/StructureGame/index.html" target = "_blank"> Structure</a> Made by Red Panda Team in 2022-23
+<br>  
+<a href = "https://gadgetgirlkim.github.io/TowerAscension/index.html" target = "_blank"> Ascension De La Torre</a> Made by Bueno Games Team in 2022-23
+<br> 
+<a href = "https://gadgetgirlkim.github.io/ThisTitleIsFalsen/index.html" target = "_blank"> This Title is False</a> Made by Distruptive [REDACTED] Team in 2022-23
 <br> 
 </p>
 
