@@ -31,7 +31,7 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br> 
 <a href = "https://gadgetgirlkim.github.io/ThisTitleIsFalse/index.html" target = "_blank"> This Title is False </a> Made by Disruptive [REDACTED] Team in 2022-23
 <br>
-<a href = "https://play.unity.com/mg/other/webgl-builds-346641" target = "_blank"> Hypothermia Hike </a> Made by Ashton D in 2022-23
+<a href = "https://play.unity.com/mg/other/webgl-builds-346641" target = "_blank"> Hypothermia Hike </a> Made by Ashton D with art assets by Iris F in 2022-23
 <br> 
 </p>
 
