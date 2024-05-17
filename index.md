@@ -35,7 +35,7 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br> 
 <a href = "https://gadgetgirlkim.github.io/WakeyWakeyBuild/index.html" target = "_blank"> Wakey Wakey </a> Made by Odd Invalid Salute Team in 2023-24
 <br> 
-<a href = "https://gadgetgirlkim.github.io/RecursionBuild/index.html" target = "_blank"> Recursion </a> Made by < a href = "https://tms.ogpc.info/Teams/Details/35f0ccd6-cd56-49af-b30b-f36e152a62b5" target = "blank"> Dream Weavers Team in 2023-24 </a> 
+<a href = "https://gadgetgirlkim.github.io/RecursionBuild/index.html" target = "_blank"> Recursion </a> Made by <a href = "https://tms.ogpc.info/Teams/Details/35f0ccd6-cd56-49af-b30b-f36e152a62b5" target = "_blank"> Dream Weavers Team in 2023-24 </a> 
 <br> 
 </p>
 
