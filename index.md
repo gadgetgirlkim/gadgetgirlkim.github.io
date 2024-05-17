@@ -33,7 +33,7 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br>
 <a href = "https://play.unity.com/mg/other/webgl-builds-346641" target = "_blank"> Hypothermia Hike </a> Made by Ashton D with art assets by Iris F in 2022-23
 <br> 
-<a href = "https://gadgetgirlkim.github.io/WakeyWakey/index.html" target = "_blank"> Wakey Wakey </a> Made by Odd Invalid Salue in 2023-24
+<a href = "https://gadgetgirlkim.github.io/WakeyWakeyBuild/index.html" target = "_blank"> Wakey Wakey </a> Made by Odd Invalid Salute in 2023-24
 <br> 
 </p>
 
