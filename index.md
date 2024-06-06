@@ -41,7 +41,7 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br> 
 <a href = "https://tms.ogpc.info/Games/Details/cd999ec3-2ac1-4def-b94c-76e6bec739f6" target = "_blank">Studio Mikcycle Team in 2023-24 </a> 
 <br>
-</p>
+
 
 
 
