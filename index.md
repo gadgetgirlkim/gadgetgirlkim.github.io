@@ -19,8 +19,6 @@ Link to Mike's GitHub page with the [Monster Clicker](https://mkinney.github.io/
 
 ## 2022–23 Teams
 
----
-
 [Structure](https://gadgetgirlkim.github.io/StructureGame/index.html) – Made by Red Panda Team in 2022–23  
 [Ascension De La Torre](https://gadgetgirlkim.github.io/TowerAscension/index.html) – Made by Bueno Games Team in 2022–23  
 [This Title is False](https://gadgetgirlkim.github.io/ThisTitleIsFalse/index.html) – Made by Disruptive [REDACTED] Team in 2022–23  
@@ -28,16 +26,12 @@ Link to Mike's GitHub page with the [Monster Clicker](https://mkinney.github.io/
 
 ## 2023–24 Teams
 
----
-
 [Wakey Wakey](https://gadgetgirlkim.github.io/WakeyWakeyBuild/index.html) – Made by [The Odd Invalid Salute Team](https://tms.ogpc.info/Games/Details/9c97aeb1-172c-400b-97e4-2eee0900608b) in 2023–24  
 [Recursion (Version 1)](https://gadgetgirlkim.github.io/RecursionBuild/index.html) – Made by [Dream Weavers Team](https://tms.ogpc.info/Games/Details/410e5edf-1421-4c42-9688-af15d9fc5f7e) in 2023–24  
 [Recursion (Final)](https://gadgetgirlkim.github.io/RecursionFinal3/index.html) – Made by [Dream Weavers Team](https://tms.ogpc.info/Games/Details/410e5edf-1421-4c42-9688-af15d9fc5f7e) in 2023–24  
 [Studio Mikcycle Team Game](https://tms.ogpc.info/Games/Details/cd999ec3-2ac1-4def-b94c-76e6bec739f6) – Made by Studio Mikcycle Team in 2023–24
 
 ## 2024–25 Teams
-
----
 
 [The Beauty Planet](https://gadgetgirlkim.github.io/TheBeautyPlanet/index.html) – Made by [Invisible Vegetable Inc Team](https://tms.ogpc.info/Games/Details/7a898d66-0ac6-4753-ab9c-0d38e06fbd06) in 2024–25  
 [Lone Voyager, Echoes of Home](https://gadgetgirlkim.github.io/LoneVoyager/index.html) – Made by [Feed the Goose Team](https://tms.ogpc.info/Games/Details/f5bc88a6-8ecf-46dc-a4b3-de869c752eac) in 2024–25  
