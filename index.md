@@ -41,7 +41,7 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br> 
 <a href = "https://tms.ogpc.info/Games/Details/cd999ec3-2ac1-4def-b94c-76e6bec739f6" target = "_blank">Studio Mikcycle Team in 2023-24 </a> 
 <br>
-<a href = "https://gadgetgirlkim.github.io/TheBeautyPlanet/FinalBuild/WebGLbuild/index.html" target = "_blank"> The Beauty Planet </a> Made by <a href = "https://tms.ogpc.info/Games/Details/7a898d66-0ac6-4753-ab9c-0d38e06fbd06" target = "_blank">Invisible Vegetable Inc in 2024-25 </a> 
+<a href = "https://gadgetgirlkim.github.io/TheBeautyPlanet/index.html" target = "_blank"> The Beauty Planet </a> Made by <a href = "https://tms.ogpc.info/Games/Details/7a898d66-0ac6-4753-ab9c-0d38e06fbd06" target = "_blank">Invisible Vegetable Inc in 2024-25 </a> 
 <br> 
 
 
