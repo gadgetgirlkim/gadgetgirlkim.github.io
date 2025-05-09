@@ -43,7 +43,8 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br>
 
 <!-- 2024-25, 5 Teams -->
-
+# 2024-25 Teams
+<hr style="width: 50%; height: 2px; background-color: gray; border: none;">
 <a href = "https://gadgetgirlkim.github.io/TheBeautyPlanet/index.html" target = "_blank"> The Beauty Planet </a> Made by <a href = "https://tms.ogpc.info/Games/Details/7a898d66-0ac6-4753-ab9c-0d38e06fbd06" target = "_blank"> the Invisible Vegetable Inc Team in 2024-25 </a> 
 <br> 
 <a href = "https://gadgetgirlkim.github.io/LoneVoyager/index.html" target = "_blank"> Lone Voyager, Echos of Home </a> Made by <a href = "https://tms.ogpc.info/Games/Details/f5bc88a6-8ecf-46dc-a4b3-de869c752eac" target = "_blank"> the Feed the Goose Team in 2024-25 </a> 
