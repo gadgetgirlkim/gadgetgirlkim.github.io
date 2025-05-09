@@ -45,7 +45,7 @@ Link to Mike's GitHub page with the <a href = "https://mkinney.github.io/monster
 <br> 
 
 
-<a href = "https://github.com/gadgetgirlkim/gadgetgirlkim.github.io/tree/39d6fef9fea7b85f4a37b42526d95b2b733299a6/TheBeautyPlanet/index.html" target = "_blank"> 
+<a href = "https://gadgetgirlkim.github.io/TheBeautyPlanet/index.html" target = "_blank"> 
 
   The Beauty Planet </a> 
   Made by <a href = "https://tms.ogpc.info/Games/Details/7a898d66-0ac6-4753-ab9c-0d38e06fbd06" target = "_blank">
