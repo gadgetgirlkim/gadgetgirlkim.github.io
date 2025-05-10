@@ -33,8 +33,8 @@ Link to Mike's GitHub page with the [Monster Clicker](https://mkinney.github.io/
 
 ## 2024–25 Teams
 
-[The Beauty Planet](https://gadgetgirlkim.github.io/TheBeautyPlanet/index.html) – Made by [Invisible Vegetable Inc Team](https://tms.ogpc.info/Games/Details/7a898d66-0ac6-4753-ab9c-0d38e06fbd06) in 2024–25  
+[The Beauty Planet](https://monsterryguy.itch.io/the-beauty-planet) – Made by [Invisible Vegetable Inc Team](https://tms.ogpc.info/Games/Details/7a898d66-0ac6-4753-ab9c-0d38e06fbd06) in 2024–25  
 [Lone Voyager, Echoes of Home](https://gadgetgirlkim.github.io/LoneVoyager/index.html) – Made by [Feed the Goose Team](https://tms.ogpc.info/Games/Details/f5bc88a6-8ecf-46dc-a4b3-de869c752eac) in 2024–25  
 [Polar Bear Parkour](https://gadgetgirlkim.github.io/PolarBearParkour/index.html) – Made by [Skyward Studios Team](https://tms.ogpc.info/Games/Details/f61ee292-f1d1-46b5-b297-886250e5318e) in 2024–25  
 [Stickman Cataclysm](https://gadgetgirlkim.github.io/StickmanCataclysm/index.html) – Made by [Soul Fire Studios Team](https://tms.ogpc.info/Games/Details/611f59a3-7b93-4400-96c0-544fbefccc4b) in 2024–25  
-[Ten Tense Tornados](https://gadgetgirlkim.github.io/TenTenseTorandos/index.html) – Made by [Silleighy Skwablrez Team](https://tms.ogpc.info/Games/Details/414dc621-8a40-44c4-80bb-347c0ef8f473) in 2024–25
+[Ten Tense Tornados](https://xvsd.github.io/tentensetorandosweb/webttt/) – Made by [Silleighy Skwablrez Team](https://tms.ogpc.info/Games/Details/414dc621-8a40-44c4-80bb-347c0ef8f473) in 2024–25
