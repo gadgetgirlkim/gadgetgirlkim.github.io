@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Linear Globs</title>
+  <style>
+    :root { --bg:#0b1220; --panel:#111a2e; --text:#e8eefc; --muted:#a9b7dd; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); }
+    .wrap { max-width:1100px; margin:0 auto; padding:16px; display:grid; grid-template-columns: 1.3fr 0.7fr; gap:16px; }
+    .card { background:var(--panel); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+    h1 { margin:0 0 6px; font-size:20px; }
+    .sub { margin:0 0 12px; color:var(--muted); font-size:13px; line-height:1.35; }
+    canvas { width:100%; height:auto; display:block; border-radius:12px; background: #070c17; border:1px solid rgba(255,255,255,0.08); }
+    label { display:block; font-size:12px; color:var(--muted); margin:10px 0 6px; }
+    input[type="text"] { width:100%; box-sizing:border-box; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.15); background:#0a1022; color:var(--text); font-size:15px; }
+    .row { display:flex; gap:10px; }
+    button {
+      cursor:pointer; border:0; border-radius:10px; padding:10px 12px; color:var(--text);
+      background: #2b5cff; font-weight:600; font-size:14px;
+    }
+    button.secondary { background:#25314f; }
+    button:disabled { opacity:0.55; cursor:not-allowed; }
+    .stats { display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:10px; }
+    .pill { background:#0a1022; border:1px solid rgba(255,255,255,0.10); border-radius:12px; padding:10px; }
+    .pill .k { color:var(--muted); font-size:11px; }
+    .pill .v { font-size:18px; font-weight:700; margin-top:2px; }
+    .log { margin-top:12px; font-size:13px; line-height:1.35; color:var(--muted); min-height:80px; }
+    .hint { margin-top:10px; padding:10px; background:#0a1022; border:1px dashed rgba(255,255,255,0.18); border-radius:12px; font-size:12px; color:var(--muted); }
+    code { color:#d6e3ff; }
+    .ok { color:#b8ffcc; }
+    .bad { color:#ffb8b8; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Linear Globs</h1>
+      <p class="sub">
+        Type a linear equation. If your line passes through globs, you score points.
+        More globs hit = more points.
+      </p>
+      <canvas id="board" width="900" height="650" aria-label="graph board"></canvas>
+    </div>
+
+    <div class="card">
+      <h1>Controls</h1>
+      <p class="sub">
+        Allowed forms:
+        <br><code>y = mx + b</code> (ex: <code>y = 2x + 1</code>, <code>y=-x+3</code>, <code>y=0.5x-2</code>, <code>y=3/2x+1</code>)
+        <br><code>x = c</code> (vertical line, ex: <code>x = -4</code>)
+      </p>
+
+      <label for="eq">Equation</label>
+      <input id="eq" type="text" placeholder="Example: y = -x + 3" autocomplete="off" />
+
+      <div class="row" style="margin-top:10px;">
+        <button id="shoot">Shoot Line</button>
+        <button id="new" class="secondary">New Round</button>
+      </div>
+
+      <div class="stats">
+        <div class="pill"><div class="k">Round</div><div class="v" id="round">1</div></div>
+        <div class="pill"><div class="k">Score</div><div class="v" id="score">0</div></div>
+        <div class="pill"><div class="k">Globs Remaining</div><div class="v" id="remain">0</div></div>
+        <div class="pill"><div class="k">Best Shot</div><div class="v" id="best">0</div></div>
+      </div>
+
+      <div class="hint">
+        Teacher tip: If you want students to “show work,” have them screenshot their best shot and
+        write the slope/intercept they used.
+      </div>
+
+      <div class="log" id="log"></div>
+    </div>
+  </div>
+
+<script>
+(() => {
+  // ====== Config ======
+  const XMIN = -10, XMAX = 10, YMIN = -7, YMAX = 7;      // graph window
+  const GLOB_COUNT_MIN = 8, GLOB_COUNT_MAX = 12;
+  const HIT_TOL = 0.25; // distance tolerance in graph units for a "hit"
+  const POINTS_PER_HIT = 10;
+  const BONUS_PER_EXTRA_HIT = 5; // extra reward for multi-hit shots
+
+  // ====== DOM ======
+  const canvas = document.getElementById('board');
+  const ctx = canvas.getContext('2d');
+  const eqInput = document.getElementById('eq');
+  const shootBtn = document.getElementById('shoot');
+  const newBtn = document.getElementById('new');
+
+  const roundEl = document.getElementById('round');
+  const scoreEl = document.getElementById('score');
+  const remainEl = document.getElementById('remain');
+  const bestEl = document.getElementById('best');
+  const logEl = document.getElementById('log');
+
+  // ====== State ======
+  let round = 1;
+  let score = 0;
+  let bestShot = 0;
+  let globs = []; // {x,y,hit:false}
+  let lastLine = null; // {type:'slope', m,b} or {type:'vertical', x}
+
+  // ====== Helpers ======
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+  function log(msg, cls="") {
+    logEl.innerHTML = `<div class="${cls}">${msg}</div>` + logEl.innerHTML;
+  }
+
+  function randInt(a, b) { // inclusive
+    return Math.floor(Math.random() * (b - a + 1)) + a;
+  }
+
+  function toPxX(x) {
+    return (x - XMIN) / (XMAX - XMIN) * canvas.width;
+  }
+  function toPxY(y) {
+    return canvas.height - (y - YMIN) / (YMAX - YMIN) * canvas.height;
+  }
+
+  function parseNumber(str) {
+    // supports integers, decimals, and fractions like -3/2
+    str = str.trim();
+    if (str.includes('/')) {
+      const [a,b] = str.split('/').map(s => s.trim());
+      const na = Number(a), nb = Number(b);
+      if (!isFinite(na) || !isFinite(nb) || nb === 0) return null;
+      return na / nb;
+    }
+    const n = Number(str);
+    return isFinite(n) ? n : null;
+  }
+
+  function parseEquation(raw) {
+    const s = raw.replace(/\s+/g,'').toLowerCase();
+
+    // vertical line: x=c
+    const vert = s.match(/^x=([+-]?\d+(?:\.\d+)?(?:\/\d+(?:\.\d+)?)?)$/);
+    if (vert) {
+      const xv = parseNumber(vert[1]);
+      if (xv === null) return { error: "Couldn’t parse the number in x = c." };
+      return { type:'vertical', x: xv };
+    }
+
+    // y = mx + b (b optional), allow: y=2x+1, y=-x+3, y=0.5x-2, y=3/2x+1, y=x, y=-x, y=2x
+    // Strategy: remove leading "y=", then find the x-term, then remainder is b.
+    if (!s.startsWith('y=')) return { error: "Use y = mx + b or x = c." };
+
+    const rhs = s.slice(2);
+    if (!rhs.includes('x')) return { error: "Your equation needs an x (unless it’s x = c)." };
+
+    // split at 'x' first occurrence
+    const idx = rhs.indexOf('x');
+    let mStr = rhs.slice(0, idx);
+    let bStr = rhs.slice(idx + 1); // may be "", "+3", "-2"
+
+    // interpret m
+    if (mStr === '') mStr = '1';
+    if (mStr === '+') mStr = '1';
+    if (mStr === '-') mStr = '-1';
+
+    const m = parseNumber(mStr);
+    if (m === null) return { error: "Couldn’t parse the slope (m)." };
+
+    let b = 0;
+    if (bStr && bStr.length > 0) {
+      // bStr starts with + or -
+      const bVal = parseNumber(bStr);
+      if (bVal === null) return { error: "Couldn’t parse the intercept (b)." };
+      b = bVal;
+    }
+    return { type:'slope', m, b };
+  }
+
+  function distancePointToLine(pt, line) {
+    // returns distance in graph units
+    const {x, y} = pt;
+    if (line.type === 'vertical') {
+      return Math.abs(x - line.x);
+    } else {
+      // line: y = m x + b -> m x - y + b = 0
+      const {m, b} = line;
+      return Math.abs(m*x - y + b) / Math.sqrt(m*m + 1);
+    }
+  }
+
+  function countRemaining() {
+    return globs.filter(g => !g.hit).length;
+  }
+
+  function generateGlobs() {
+    const n = randInt(GLOB_COUNT_MIN, GLOB_COUNT_MAX);
+    const used = new Set();
+    const out = [];
+    while (out.length < n) {
+      const x = randInt(XMIN+1, XMAX-1);
+      const y = randInt(YMIN+1, YMAX-1);
+      const key = `${x},${y}`;
+      if (used.has(key)) continue;
+      used.add(key);
+      out.push({x, y, hit:false});
+    }
+    return out;
+  }
+
+  // ====== Drawing ======
+  function drawGrid() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    // grid lines
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(255,255,255,0.07)';
+    for (let x = Math.ceil(XMIN); x <= Math.floor(XMAX); x++) {
+      const px = toPxX(x);
+      ctx.beginPath(); ctx.moveTo(px,0); ctx.lineTo(px,canvas.height); ctx.stroke();
+    }
+    for (let y = Math.ceil(YMIN); y <= Math.floor(YMAX); y++) {
+      const py = toPxY(y);
+      ctx.beginPath(); ctx.moveTo(0,py); ctx.lineTo(canvas.width,py); ctx.stroke();
+    }
+
+    // axes
+    ctx.strokeStyle = 'rgba(255,255,255,0.22)';
+    ctx.lineWidth = 2;
+    // y-axis (x=0)
+    const x0 = toPxX(0);
+    ctx.beginPath(); ctx.moveTo(x0,0); ctx.lineTo(x0,canvas.height); ctx.stroke();
+    // x-axis (y=0)
+    const y0 = toPxY(0);
+    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(canvas.width,y0); ctx.stroke();
+
+    // axis labels (small)
+    ctx.fillStyle = 'rgba(255,255,255,0.35)';
+    ctx.font = '12px system-ui, sans-serif';
+    ctx.fillText('x', canvas.width - 14, y0 - 6);
+    ctx.fillText('y', x0 + 6, 14);
+  }
+
+  function drawGlobs() {
+    for (const g of globs) {
+      const px = toPxX(g.x);
+      const py = toPxY(g.y);
+      ctx.beginPath();
+      ctx.arc(px, py, 10, 0, Math.PI*2);
+
+      ctx.fillStyle = g.hit ? 'rgba(90,255,150,0.85)' : 'rgba(120,255,120,0.85)';
+      ctx.fill();
+
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = g.hit ? 'rgba(90,255,150,0.35)' : 'rgba(120,255,120,0.35)';
+      ctx.stroke();
+    }
+  }
+
+  function drawLine(line) {
+    if (!line) return;
+
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = 'rgba(90,180,255,0.9)';
+    ctx.beginPath();
+
+    if (line.type === 'vertical') {
+      const px = toPxX(line.x);
+      ctx.moveTo(px, 0);
+      ctx.lineTo(px, canvas.height);
+    } else {
+      // draw across window: compute y at xmin and xmax
+      const y1 = line.m * XMIN + line.b;
+      const y2 = line.m * XMAX + line.b;
+      ctx.moveTo(toPxX(XMIN), toPxY(y1));
+      ctx.lineTo(toPxX(XMAX), toPxY(y2));
+    }
+
+    ctx.stroke();
+  }
+
+  function render() {
+    drawGrid();
+    drawLine(lastLine);
+    drawGlobs();
+
+    roundEl.textContent = String(round);
+    scoreEl.textContent = String(score);
+    remainEl.textContent = String(countRemaining());
+    bestEl.textContent = String(bestShot);
+  }
+
+  // ====== Gameplay ======
+  function newRound() {
+    globs = generateGlobs();
+    lastLine = null;
+    eqInput.value = '';
+    log(`<span class="ok">New round!</span> Hit as many globs as you can with one line.`, "");
+    render();
+  }
+
+  function shoot() {
+    const raw = eqInput.value.trim();
+    if (!raw) {
+      log(`<span class="bad">Type an equation first.</span> Example: <code>y = -x + 3</code>`, "");
+      return;
+    }
+
+    const parsed = parseEquation(raw);
+    if (parsed.error) {
+      log(`<span class="bad">${parsed.error}</span> Try <code>y=2x+1</code> or <code>x=-4</code>.`, "");
+      return;
+    }
+
+    lastLine = parsed;
+
+    // count hits among remaining globs
+    let hits = 0;
+    for (const g of globs) {
+      if (g.hit) continue;
+      const d = distancePointToLine(g, parsed);
+      if (d <= HIT_TOL) {
+        g.hit = true;
+        hits++;
+      }
+    }
+
+    // scoring
+    if (hits === 0) {
+      log(`No globs hit. Adjust slope/intercept and try again.`, "");
+    } else {
+      const shotPoints = hits * POINTS_PER_HIT + (hits > 1 ? (hits - 1) * BONUS_PER_EXTRA_HIT : 0);
+      score += shotPoints;
+      bestShot = Math.max(bestShot, hits);
+      log(`<span class="ok">Hit ${hits} glob${hits===1?'':'s'}!</span> +${shotPoints} points.`, "");
+    }
+
+    // win condition
+    if (countRemaining() === 0) {
+      log(`<span class="ok">Round cleared!</span> Starting next round…`, "");
+      round++;
+      // auto start a new round after a short pause
+      setTimeout(() => newRound(), 800);
+    }
+
+    render();
+  }
+
+  // ====== Events ======
+  shootBtn.addEventListener('click', shoot);
+  newBtn.addEventListener('click', () => { round++; newRound(); });
+  eqInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') shoot();
+  });
+
+  // init
+  newRound();
+})();
+</script>
+</body>
+</html>
