@@ -1,7 +1,7 @@
 # Welcome to Kim's GitHub Page
 
 ## Green Globs
-<a href="https://gadgetgirlkim.github.io/GreenGlobsHTMLFolder/index.html" target="_blank" rel="noopener noreferrer">Green Globs</a> 
+<a href="https://gadgetgirlkim.github.io/GreenGlobs/index.html" target="_blank" rel="noopener noreferrer">Green Globs</a> 
 
 ## My Games
 
